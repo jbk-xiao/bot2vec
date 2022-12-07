@@ -23,8 +23,8 @@ with open(cresci2015_userdata_file_path, 'r', encoding='utf-8') as f:
 X = []
 y = []
 
-for idx, key in enumerate(cresci2015_emb_model.wv.vocab):
-    emb_vector = cresci2015_emb_model.wv[key]
+for idx, key in enumerate(cresci2015_emb_model.key_to_index):
+    emb_vector = cresci2015_emb_model[key]
     X.append(emb_vector)
     y.append(id_label_dict[key])
 

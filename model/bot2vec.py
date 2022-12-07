@@ -143,12 +143,12 @@ class Bot2Vec():
             # applying word2vec model for learning the representations of nodes in given OSN
             start_time = time.time()
             word2vec_model = Word2Vec(self.walks,
-                                      size=self.d,
+                                      vector_size=self.d,
                                       window=self.window_size,
                                       min_count=0,
                                       sg=1,
                                       workers=self.num_workers,
-                                      iter=self.max_iter)
+                                      epochs=self.max_iter)
 
             word2vec_model.wv.save_word2vec_format(self.emb_output_file)
             print(' -> Done, finish to learn the representation of given OSN in [{:.4f}] seconds'.format(
